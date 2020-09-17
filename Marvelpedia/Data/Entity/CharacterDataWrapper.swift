@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CharacteDataWrapper: Codable {
+class CharacterDataWrapper: Codable {
     
     // MARK: Public constants
     

@@ -3,10 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B6D35FC2513DF4B00D8EFF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D35FB2513DF4B00D8EFF0 /* Constants.swift */; };
+		5B6D36002513E15600D8EFF0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D35FF2513E15600D8EFF0 /* Endpoint.swift */; };
+		5B6D36012513E15600D8EFF0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D35FF2513E15600D8EFF0 /* Endpoint.swift */; };
+		5B6D36022513E15600D8EFF0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D35FF2513E15600D8EFF0 /* Endpoint.swift */; };
+		5B6D36032513E15D00D8EFF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D35FB2513DF4B00D8EFF0 /* Constants.swift */; };
+		5B6D36042513E15D00D8EFF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D35FB2513DF4B00D8EFF0 /* Constants.swift */; };
+		5B6D36062513EEE500D8EFF0 /* APIHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36052513EEE500D8EFF0 /* APIHost.swift */; };
+		5B6D36072513EEE500D8EFF0 /* APIHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36052513EEE500D8EFF0 /* APIHost.swift */; };
+		5B6D36082513EEE500D8EFF0 /* APIHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36052513EEE500D8EFF0 /* APIHost.swift */; };
+		5B6D360A2513F02000D8EFF0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36092513F02000D8EFF0 /* APIResponse.swift */; };
+		5B6D360B2513F02000D8EFF0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36092513F02000D8EFF0 /* APIResponse.swift */; };
+		5B6D360C2513F02000D8EFF0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36092513F02000D8EFF0 /* APIResponse.swift */; };
+		5B6D360E2513F03C00D8EFF0 /* APIVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D360D2513F03C00D8EFF0 /* APIVersion.swift */; };
+		5B6D360F2513F03C00D8EFF0 /* APIVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D360D2513F03C00D8EFF0 /* APIVersion.swift */; };
+		5B6D36102513F03C00D8EFF0 /* APIVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D360D2513F03C00D8EFF0 /* APIVersion.swift */; };
+		5B6D36122513F26900D8EFF0 /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36112513F26900D8EFF0 /* BaseClient.swift */; };
+		5B6D36132513F26900D8EFF0 /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36112513F26900D8EFF0 /* BaseClient.swift */; };
+		5B6D36142513F26900D8EFF0 /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36112513F26900D8EFF0 /* BaseClient.swift */; };
+		5B6D36162513F2B800D8EFF0 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36152513F2B800D8EFF0 /* Semaphore.swift */; };
+		5B6D36172513F2B800D8EFF0 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36152513F2B800D8EFF0 /* Semaphore.swift */; };
+		5B6D36182513F2B800D8EFF0 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36152513F2B800D8EFF0 /* Semaphore.swift */; };
+		5B6D361A2513F60700D8EFF0 /* APIException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36192513F60700D8EFF0 /* APIException.swift */; };
+		5B6D361B2513F60700D8EFF0 /* APIException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36192513F60700D8EFF0 /* APIException.swift */; };
+		5B6D361C2513F60700D8EFF0 /* APIException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36192513F60700D8EFF0 /* APIException.swift */; };
+		5B6D361E2513F75F00D8EFF0 /* APIErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D361D2513F75F00D8EFF0 /* APIErrorCode.swift */; };
+		5B6D361F2513F75F00D8EFF0 /* APIErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D361D2513F75F00D8EFF0 /* APIErrorCode.swift */; };
+		5B6D36202513F75F00D8EFF0 /* APIErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D361D2513F75F00D8EFF0 /* APIErrorCode.swift */; };
+		5B6D36222513F9FE00D8EFF0 /* MarvelClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36212513F9FE00D8EFF0 /* MarvelClientProtocol.swift */; };
+		5B6D36232513F9FE00D8EFF0 /* MarvelClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36212513F9FE00D8EFF0 /* MarvelClientProtocol.swift */; };
+		5B6D36242513F9FE00D8EFF0 /* MarvelClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36212513F9FE00D8EFF0 /* MarvelClientProtocol.swift */; };
+		5B6D36262513FAB900D8EFF0 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */; };
+		5B6D36272513FAB900D8EFF0 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */; };
+		5B6D36282513FAB900D8EFF0 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */; };
 		5BFB000025126A0C00D0098B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBFFFD25126A0C00D0098B /* Image.swift */; };
 		5BFB000225126A8200D0098B /* ComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB000125126A8200D0098B /* ComicList.swift */; };
 		5BFB000325126A8200D0098B /* ComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB000125126A8200D0098B /* ComicList.swift */; };
@@ -113,6 +146,17 @@
 		287436B63B894D30E325F7AC /* Pods_Marvelpedia_MarvelpediaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvelpedia_MarvelpediaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D78285F8947A7DC30AFA59 /* Pods-Marvelpedia-MarvelpediaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvelpedia-MarvelpediaUITests.release.xcconfig"; path = "Target Support Files/Pods-Marvelpedia-MarvelpediaUITests/Pods-Marvelpedia-MarvelpediaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D5740852C2896BAAB7B9C6D /* Pods_Marvelpedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvelpedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B6D35FB2513DF4B00D8EFF0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B6D35FF2513E15600D8EFF0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5B6D36052513EEE500D8EFF0 /* APIHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHost.swift; sourceTree = "<group>"; };
+		5B6D36092513F02000D8EFF0 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		5B6D360D2513F03C00D8EFF0 /* APIVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIVersion.swift; sourceTree = "<group>"; };
+		5B6D36112513F26900D8EFF0 /* BaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
+		5B6D36152513F2B800D8EFF0 /* Semaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
+		5B6D36192513F60700D8EFF0 /* APIException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIException.swift; sourceTree = "<group>"; };
+		5B6D361D2513F75F00D8EFF0 /* APIErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorCode.swift; sourceTree = "<group>"; };
+		5B6D36212513F9FE00D8EFF0 /* MarvelClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClientProtocol.swift; sourceTree = "<group>"; };
+		5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClient.swift; sourceTree = "<group>"; };
 		5BFB000125126A8200D0098B /* ComicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicList.swift; sourceTree = "<group>"; };
 		5BFB000525126ADF00D0098B /* ComicSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicSummary.swift; sourceTree = "<group>"; };
 		5BFB000925126B1D00D0098B /* StoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryList.swift; sourceTree = "<group>"; };
@@ -193,6 +237,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B6D35FA2513DF1200D8EFF0 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				5B6D35FD2513DF5200D8EFF0 /* Constants */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		5B6D35FD2513DF5200D8EFF0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5B6D35FB2513DF4B00D8EFF0 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		5B6D35FE2513E13E00D8EFF0 /* Poso */ = {
+			isa = PBXGroup;
+			children = (
+				5B6D35FF2513E15600D8EFF0 /* Endpoint.swift */,
+				5B6D36052513EEE500D8EFF0 /* APIHost.swift */,
+				5B6D36092513F02000D8EFF0 /* APIResponse.swift */,
+				5B6D360D2513F03C00D8EFF0 /* APIVersion.swift */,
+				5B6D36192513F60700D8EFF0 /* APIException.swift */,
+				5B6D361D2513F75F00D8EFF0 /* APIErrorCode.swift */,
+			);
+			path = Poso;
+			sourceTree = "<group>";
+		};
+		5BCAA4782513DC6100428019 /* Abstraction */ = {
+			isa = PBXGroup;
+			children = (
+				5B6D36212513F9FE00D8EFF0 /* MarvelClientProtocol.swift */,
+			);
+			path = Abstraction;
+			sourceTree = "<group>";
+		};
 		5BFBFFAC251228AF00D0098B = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				5BFBFFE82512634000D0098B /* Data */,
+				5B6D35FA2513DF1200D8EFF0 /* System */,
 				5BFBFFB8251228B000D0098B /* AppDelegate.swift */,
 				5BFBFFBA251228B000D0098B /* SceneDelegate.swift */,
 				5BFBFFBC251228B000D0098B /* ViewController.swift */,
@@ -299,6 +381,11 @@
 		5BFBFFEB2512637C00D0098B /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				5B6D35FE2513E13E00D8EFF0 /* Poso */,
+				5BCAA4782513DC6100428019 /* Abstraction */,
+				5B6D36112513F26900D8EFF0 /* BaseClient.swift */,
+				5B6D36152513F2B800D8EFF0 /* Semaphore.swift */,
+				5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -334,6 +421,7 @@
 				5BFBFFB1251228B000D0098B /* Sources */,
 				5BFBFFB2251228B000D0098B /* Frameworks */,
 				5BFBFFB3251228B000D0098B /* Resources */,
+				FC83E168EE68D2ACF567DD59 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -371,6 +459,7 @@
 				5BFBFFD2251228B800D0098B /* Sources */,
 				5BFBFFD3251228B800D0098B /* Frameworks */,
 				5BFBFFD4251228B800D0098B /* Resources */,
+				CBC57A05A73B3E27E792E8D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -519,6 +608,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CBC57A05A73B3E27E792E8D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marvelpedia-MarvelpediaUITests/Pods-Marvelpedia-MarvelpediaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marvelpedia-MarvelpediaUITests/Pods-Marvelpedia-MarvelpediaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marvelpedia-MarvelpediaUITests/Pods-Marvelpedia-MarvelpediaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC83E168EE68D2ACF567DD59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marvelpedia/Pods-Marvelpedia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marvelpedia/Pods-Marvelpedia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marvelpedia/Pods-Marvelpedia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -526,10 +649,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6D361A2513F60700D8EFF0 /* APIException.swift in Sources */,
 				5BFB000A25126B1D00D0098B /* StoryList.swift in Sources */,
 				5BFBFFBD251228B000D0098B /* ViewController.swift in Sources */,
+				5B6D36062513EEE500D8EFF0 /* APIHost.swift in Sources */,
+				5B6D360E2513F03C00D8EFF0 /* APIVersion.swift in Sources */,
 				5BFB000225126A8200D0098B /* ComicList.swift in Sources */,
+				5B6D36122513F26900D8EFF0 /* BaseClient.swift in Sources */,
 				5BFBFFFE25126A0C00D0098B /* Image.swift in Sources */,
+				5B6D36162513F2B800D8EFF0 /* Semaphore.swift in Sources */,
 				5BFB003A2512BB6E00D0098B /* CreatorList.swift in Sources */,
 				5BFB00322512B9F700D0098B /* ComicDate.swift in Sources */,
 				5BFB000E25126B6300D0098B /* StorySummary.swift in Sources */,
@@ -539,7 +667,9 @@
 				5BFB001E25126C0000D0098B /* SeriesSummary.swift in Sources */,
 				5BFB001225126B9300D0098B /* EventList.swift in Sources */,
 				5BFB002A2512B5B600D0098B /* ComicEntity.swift in Sources */,
+				5B6D361E2513F75F00D8EFF0 /* APIErrorCode.swift in Sources */,
 				5BFBFFB9251228B000D0098B /* AppDelegate.swift in Sources */,
+				5B6D36002513E15600D8EFF0 /* Endpoint.swift in Sources */,
 				5BFBFFBB251228B000D0098B /* SceneDelegate.swift in Sources */,
 				5BFB00422512C24000D0098B /* CreatorSummary.swift in Sources */,
 				5BFB00462512C29800D0098B /* CharacterSummary.swift in Sources */,
@@ -547,11 +677,15 @@
 				5BFBFFF6251268E900D0098B /* CharacterEntity.swift in Sources */,
 				5BFB000625126ADF00D0098B /* ComicSummary.swift in Sources */,
 				5BFB001A25126BE000D0098B /* SeriesList.swift in Sources */,
+				5B6D360A2513F02000D8EFF0 /* APIResponse.swift in Sources */,
+				5B6D36222513F9FE00D8EFF0 /* MarvelClientProtocol.swift in Sources */,
 				5BFB00362512BADE00D0098B /* ComicPrice.swift in Sources */,
 				5BFBFFF22512681B00D0098B /* CharacterDataContainer.swift in Sources */,
 				5BFB00262512B57D00D0098B /* ComicDataContainer.swift in Sources */,
 				5BFB00222512B53A00D0098B /* ComicDataWrapper.swift in Sources */,
 				5BFB001625126BBF00D0098B /* EventSummary.swift in Sources */,
+				5B6D36262513FAB900D8EFF0 /* MarvelClient.swift in Sources */,
+				5B6D35FC2513DF4B00D8EFF0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,29 +694,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BFBFFD0251228B800D0098B /* MarvelpediaTests.swift in Sources */,
+				5B6D36132513F26900D8EFF0 /* BaseClient.swift in Sources */,
 				5BFBFFFF25126A0C00D0098B /* Image.swift in Sources */,
 				5BFB00432512C24000D0098B /* CreatorSummary.swift in Sources */,
 				5BFB001325126B9300D0098B /* EventList.swift in Sources */,
 				5BFB003F2512C21100D0098B /* CharacterList.swift in Sources */,
 				5BFBFFF32512681B00D0098B /* CharacterDataContainer.swift in Sources */,
 				5BFB00232512B53B00D0098B /* ComicDataWrapper.swift in Sources */,
+				5B6D36032513E15D00D8EFF0 /* Constants.swift in Sources */,
 				5BFB000B25126B1D00D0098B /* StoryList.swift in Sources */,
 				5BFBFFF7251268E900D0098B /* CharacterEntity.swift in Sources */,
 				5BFBFFEF251266BD00D0098B /* CharacterDataWrapper.swift in Sources */,
 				5BFB000325126A8200D0098B /* ComicList.swift in Sources */,
+				5B6D36272513FAB900D8EFF0 /* MarvelClient.swift in Sources */,
+				5B6D36232513F9FE00D8EFF0 /* MarvelClientProtocol.swift in Sources */,
 				5BFB00372512BADE00D0098B /* ComicPrice.swift in Sources */,
 				5BFB00472512C29800D0098B /* CharacterSummary.swift in Sources */,
+				5B6D361F2513F75F00D8EFF0 /* APIErrorCode.swift in Sources */,
 				5BFB00332512B9F700D0098B /* ComicDate.swift in Sources */,
+				5B6D36072513EEE500D8EFF0 /* APIHost.swift in Sources */,
 				5BFB000725126ADF00D0098B /* ComicSummary.swift in Sources */,
 				5BFB002B2512B5B600D0098B /* ComicEntity.swift in Sources */,
 				5BFB003B2512BB6E00D0098B /* CreatorList.swift in Sources */,
 				5BFB001F25126C0000D0098B /* SeriesSummary.swift in Sources */,
 				5BFB00272512B57D00D0098B /* ComicDataContainer.swift in Sources */,
+				5B6D361B2513F60700D8EFF0 /* APIException.swift in Sources */,
+				5B6D360B2513F02000D8EFF0 /* APIResponse.swift in Sources */,
 				5BFB001725126BBF00D0098B /* EventSummary.swift in Sources */,
+				5B6D360F2513F03C00D8EFF0 /* APIVersion.swift in Sources */,
+				5B6D36172513F2B800D8EFF0 /* Semaphore.swift in Sources */,
 				5BFB000F25126B6300D0098B /* StorySummary.swift in Sources */,
 				5BFB001B25126BE000D0098B /* SeriesList.swift in Sources */,
 				5BFBFFFB251269D600D0098B /* Url.swift in Sources */,
 				5BFB002F2512B8AD00D0098B /* TextObject.swift in Sources */,
+				5B6D36012513E15600D8EFF0 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,29 +736,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BFBFFDB251228B800D0098B /* MarvelpediaUITests.swift in Sources */,
+				5B6D36142513F26900D8EFF0 /* BaseClient.swift in Sources */,
 				5BFB000025126A0C00D0098B /* Image.swift in Sources */,
 				5BFB00442512C24000D0098B /* CreatorSummary.swift in Sources */,
 				5BFB001425126B9300D0098B /* EventList.swift in Sources */,
 				5BFB00402512C21200D0098B /* CharacterList.swift in Sources */,
 				5BFBFFF42512681B00D0098B /* CharacterDataContainer.swift in Sources */,
 				5BFB00242512B53B00D0098B /* ComicDataWrapper.swift in Sources */,
+				5B6D36042513E15D00D8EFF0 /* Constants.swift in Sources */,
 				5BFB000C25126B1D00D0098B /* StoryList.swift in Sources */,
 				5BFBFFF8251268E900D0098B /* CharacterEntity.swift in Sources */,
 				5BFBFFF0251266BD00D0098B /* CharacterDataWrapper.swift in Sources */,
 				5BFB000425126A8200D0098B /* ComicList.swift in Sources */,
+				5B6D36282513FAB900D8EFF0 /* MarvelClient.swift in Sources */,
+				5B6D36242513F9FE00D8EFF0 /* MarvelClientProtocol.swift in Sources */,
 				5BFB00382512BADE00D0098B /* ComicPrice.swift in Sources */,
 				5BFB00482512C29800D0098B /* CharacterSummary.swift in Sources */,
+				5B6D36202513F75F00D8EFF0 /* APIErrorCode.swift in Sources */,
 				5BFB00342512B9F700D0098B /* ComicDate.swift in Sources */,
+				5B6D36082513EEE500D8EFF0 /* APIHost.swift in Sources */,
 				5BFB000825126ADF00D0098B /* ComicSummary.swift in Sources */,
 				5BFB002C2512B5B600D0098B /* ComicEntity.swift in Sources */,
 				5BFB003C2512BB6E00D0098B /* CreatorList.swift in Sources */,
 				5BFB002025126C0000D0098B /* SeriesSummary.swift in Sources */,
 				5BFB00282512B57D00D0098B /* ComicDataContainer.swift in Sources */,
+				5B6D361C2513F60700D8EFF0 /* APIException.swift in Sources */,
+				5B6D360C2513F02000D8EFF0 /* APIResponse.swift in Sources */,
 				5BFB001825126BBF00D0098B /* EventSummary.swift in Sources */,
+				5B6D36102513F03C00D8EFF0 /* APIVersion.swift in Sources */,
+				5B6D36182513F2B800D8EFF0 /* Semaphore.swift in Sources */,
 				5BFB001025126B6300D0098B /* StorySummary.swift in Sources */,
 				5BFB001C25126BE000D0098B /* SeriesList.swift in Sources */,
 				5BFBFFFC251269D600D0098B /* Url.swift in Sources */,
 				5BFB00302512B8AD00D0098B /* TextObject.swift in Sources */,
+				5B6D36022513E15600D8EFF0 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
