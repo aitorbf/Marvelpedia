@@ -40,6 +40,12 @@
 		5B6D36262513FAB900D8EFF0 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */; };
 		5B6D36272513FAB900D8EFF0 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */; };
 		5B6D36282513FAB900D8EFF0 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */; };
+		5B6D362C2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D362B2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift */; };
+		5B6D362D2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D362B2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift */; };
+		5B6D362E2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D362B2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift */; };
+		5B6D36342514A53B00D8EFF0 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36332514A53B00D8EFF0 /* RemoteDataSource.swift */; };
+		5B6D36352514A53B00D8EFF0 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36332514A53B00D8EFF0 /* RemoteDataSource.swift */; };
+		5B6D36362514A53B00D8EFF0 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D36332514A53B00D8EFF0 /* RemoteDataSource.swift */; };
 		5BFB000025126A0C00D0098B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBFFFD25126A0C00D0098B /* Image.swift */; };
 		5BFB000225126A8200D0098B /* ComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB000125126A8200D0098B /* ComicList.swift */; };
 		5BFB000325126A8200D0098B /* ComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB000125126A8200D0098B /* ComicList.swift */; };
@@ -157,6 +163,8 @@
 		5B6D361D2513F75F00D8EFF0 /* APIErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorCode.swift; sourceTree = "<group>"; };
 		5B6D36212513F9FE00D8EFF0 /* MarvelClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClientProtocol.swift; sourceTree = "<group>"; };
 		5B6D36252513FAB900D8EFF0 /* MarvelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClient.swift; sourceTree = "<group>"; };
+		5B6D362B2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProtocol.swift; sourceTree = "<group>"; };
+		5B6D36332514A53B00D8EFF0 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		5BFB000125126A8200D0098B /* ComicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicList.swift; sourceTree = "<group>"; };
 		5BFB000525126ADF00D0098B /* ComicSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicSummary.swift; sourceTree = "<group>"; };
 		5BFB000925126B1D00D0098B /* StoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryList.swift; sourceTree = "<group>"; };
@@ -264,6 +272,14 @@
 				5B6D361D2513F75F00D8EFF0 /* APIErrorCode.swift */,
 			);
 			path = Poso;
+			sourceTree = "<group>";
+		};
+		5B6D36292514A42700D8EFF0 /* Abstraction */ = {
+			isa = PBXGroup;
+			children = (
+				5B6D362B2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift */,
+			);
+			path = Abstraction;
 			sourceTree = "<group>";
 		};
 		5BCAA4782513DC6100428019 /* Abstraction */ = {
@@ -393,6 +409,8 @@
 		5BFBFFEC2512638700D0098B /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				5B6D36292514A42700D8EFF0 /* Abstraction */,
+				5B6D36332514A53B00D8EFF0 /* RemoteDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -656,6 +674,7 @@
 				5B6D360E2513F03C00D8EFF0 /* APIVersion.swift in Sources */,
 				5BFB000225126A8200D0098B /* ComicList.swift in Sources */,
 				5B6D36122513F26900D8EFF0 /* BaseClient.swift in Sources */,
+				5B6D36342514A53B00D8EFF0 /* RemoteDataSource.swift in Sources */,
 				5BFBFFFE25126A0C00D0098B /* Image.swift in Sources */,
 				5B6D36162513F2B800D8EFF0 /* Semaphore.swift in Sources */,
 				5BFB003A2512BB6E00D0098B /* CreatorList.swift in Sources */,
@@ -667,6 +686,7 @@
 				5BFB001E25126C0000D0098B /* SeriesSummary.swift in Sources */,
 				5BFB001225126B9300D0098B /* EventList.swift in Sources */,
 				5BFB002A2512B5B600D0098B /* ComicEntity.swift in Sources */,
+				5B6D362C2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift in Sources */,
 				5B6D361E2513F75F00D8EFF0 /* APIErrorCode.swift in Sources */,
 				5BFBFFB9251228B000D0098B /* AppDelegate.swift in Sources */,
 				5B6D36002513E15600D8EFF0 /* Endpoint.swift in Sources */,
@@ -703,6 +723,7 @@
 				5BFB00232512B53B00D0098B /* ComicDataWrapper.swift in Sources */,
 				5B6D36032513E15D00D8EFF0 /* Constants.swift in Sources */,
 				5BFB000B25126B1D00D0098B /* StoryList.swift in Sources */,
+				5B6D362D2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift in Sources */,
 				5BFBFFF7251268E900D0098B /* CharacterEntity.swift in Sources */,
 				5BFBFFEF251266BD00D0098B /* CharacterDataWrapper.swift in Sources */,
 				5BFB000325126A8200D0098B /* ComicList.swift in Sources */,
@@ -716,6 +737,7 @@
 				5BFB000725126ADF00D0098B /* ComicSummary.swift in Sources */,
 				5BFB002B2512B5B600D0098B /* ComicEntity.swift in Sources */,
 				5BFB003B2512BB6E00D0098B /* CreatorList.swift in Sources */,
+				5B6D36352514A53B00D8EFF0 /* RemoteDataSource.swift in Sources */,
 				5BFB001F25126C0000D0098B /* SeriesSummary.swift in Sources */,
 				5BFB00272512B57D00D0098B /* ComicDataContainer.swift in Sources */,
 				5B6D361B2513F60700D8EFF0 /* APIException.swift in Sources */,
@@ -745,6 +767,7 @@
 				5BFB00242512B53B00D0098B /* ComicDataWrapper.swift in Sources */,
 				5B6D36042513E15D00D8EFF0 /* Constants.swift in Sources */,
 				5BFB000C25126B1D00D0098B /* StoryList.swift in Sources */,
+				5B6D362E2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift in Sources */,
 				5BFBFFF8251268E900D0098B /* CharacterEntity.swift in Sources */,
 				5BFBFFF0251266BD00D0098B /* CharacterDataWrapper.swift in Sources */,
 				5BFB000425126A8200D0098B /* ComicList.swift in Sources */,
@@ -758,6 +781,7 @@
 				5BFB000825126ADF00D0098B /* ComicSummary.swift in Sources */,
 				5BFB002C2512B5B600D0098B /* ComicEntity.swift in Sources */,
 				5BFB003C2512BB6E00D0098B /* CreatorList.swift in Sources */,
+				5B6D36362514A53B00D8EFF0 /* RemoteDataSource.swift in Sources */,
 				5BFB002025126C0000D0098B /* SeriesSummary.swift in Sources */,
 				5BFB00282512B57D00D0098B /* ComicDataContainer.swift in Sources */,
 				5B6D361C2513F60700D8EFF0 /* APIException.swift in Sources */,
