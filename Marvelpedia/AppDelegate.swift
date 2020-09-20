@@ -11,10 +11,18 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    // MARK: - Public constants
+    
+    let dependencyInjectionManager = DependencyInjectionManager()
+    
+    static var originalAppDelegate: AppDelegate!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let _ = NSClassFromString("XCTest") { return true }
+
+        AppDelegate.originalAppDelegate = self
+        
         return true
     }
 

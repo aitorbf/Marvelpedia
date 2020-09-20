@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersViewController" customModule="Marvelpedia" customModuleProvider="target">
+            <connections>
+                <outlet property="charactersCollectionView" destination="0im-vy-bwz" id="m0n-5b-yha"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sh-TQ-dD8">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0im-vy-bwz">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4q2-R9-Ra7">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <cells/>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="0im-vy-bwz" secondAttribute="bottom" id="Uht-1I-7cE"/>
+                        <constraint firstItem="0im-vy-bwz" firstAttribute="top" secondItem="4Sh-TQ-dD8" secondAttribute="top" id="Zkt-N2-rfs"/>
+                        <constraint firstItem="0im-vy-bwz" firstAttribute="leading" secondItem="4Sh-TQ-dD8" secondAttribute="leading" id="hsZ-tp-Og5"/>
+                        <constraint firstAttribute="trailing" secondItem="0im-vy-bwz" secondAttribute="trailing" id="mxg-KS-KPr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="4Sh-TQ-dD8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6eJ-KU-giJ"/>
+                <constraint firstItem="4Sh-TQ-dD8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KwZ-Q8-kSR"/>
+                <constraint firstItem="4Sh-TQ-dD8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="j6E-ca-MDp"/>
+                <constraint firstAttribute="bottom" secondItem="4Sh-TQ-dD8" secondAttribute="bottom" id="qhH-ME-vrQ"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="72.991071428571431"/>
+        </view>
+    </objects>
+</document>

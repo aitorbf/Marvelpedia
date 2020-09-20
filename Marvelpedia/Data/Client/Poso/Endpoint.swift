@@ -51,9 +51,9 @@ enum Endpoint {
     
     var parameters: Parameters? {
         switch self {
-        case .characters(_, _),
-             .characterComics(_, _, _):
-            return ["apikey" : "7063ff05702d6e4f3ea7491f087b3e7c"]
+        case .characters(let host, _),
+             .characterComics(_, let host, _):
+            return getParameters(host)
         }
     }
     
@@ -67,6 +67,22 @@ enum Endpoint {
         switch host {
         case .marvel:
             return Constants.API.Host.marvel
+        }
+    }
+    
+    private func getParameters(_ host: APIHost) -> [String : Any] {
+        switch host {
+        case .marvel:
+            let publicMarvelAPIKey = Bundle.main.object(forInfoDictionaryKey: "PublicMarvelAPIKey") as! String
+            let privateMarvelAPIKey = Bundle.main.object(forInfoDictionaryKey: "PrivateMarvelAPIKey") as! String
+            let timestamp = String(Date().timeIntervalSince1970)
+            let hash = (timestamp + privateMarvelAPIKey + publicMarvelAPIKey).md5()
+            let parameters = [
+                "ts"        : timestamp,
+                "apikey"    : publicMarvelAPIKey,
+                "hash"      : hash
+            ] as [String : Any]
+            return parameters
         }
     }
 }

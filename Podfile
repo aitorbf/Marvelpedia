@@ -7,6 +7,8 @@ target 'Marvelpedia' do
 
   # Pods for Marvelpedia
   pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'Swinject'
 
   target 'MarvelpediaTests' do
     inherit! :search_paths

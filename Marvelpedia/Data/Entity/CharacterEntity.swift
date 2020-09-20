@@ -15,7 +15,7 @@ class CharacterEntity: Codable {
     let id: Int?
     let name: String?
     let description: String?
-    let modified: Date?
+    let modified: String?
     let resourceURI: String?
     let urls: [Url]?
     let thumbnail: Image?

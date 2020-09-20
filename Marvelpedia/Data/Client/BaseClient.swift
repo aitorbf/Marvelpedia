@@ -37,16 +37,17 @@ class BaseClient {
                     completion(nil, APIException.unknownException)
                 }
                 
-                if let data = response.data {
-                    do {
-                        if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                            if let code = dictionary["errorCode"] as? String {
-                                completion(nil, self.checkErrorCode(code))
-                            }
-                        }
-                    } catch let exception {
-                        completion(nil, exception as? APIException)
-                    }
+                if let data = response.error {
+//                    do {
+//                        if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+//                            if let code = dictionary["errorCode"] as? String {
+//                                completion(nil, self.checkErrorCode(code))
+//                            }
+//                        }
+//                    } catch let exception {
+//                        completion(nil, exception as? APIException)
+//                    }
+                    print(data)
                 }
                 completion(nil, APIException.connectivityException)
             }

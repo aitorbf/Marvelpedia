@@ -13,7 +13,7 @@ class ComicDate: Codable {
     // MARK: Public constants
     
     let type: String?
-    let date: Date?
+    let date: String?
     
     // MARK: Initializers
     

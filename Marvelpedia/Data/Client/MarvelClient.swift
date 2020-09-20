@@ -22,10 +22,10 @@ extension MarvelClient: MarvelClientProtocol {
                 completion(nil, error)
             } else if let resultData = response?.data {
                 do {
-                    let fixture = try JSONDecoder().decode(CharacterDataWrapper.self, from: resultData)
-                    completion(fixture, nil)
+                    let characterDataWrapper = try JSONDecoder().decode(CharacterDataWrapper.self, from: resultData)
+                    completion(characterDataWrapper, nil)
                 } catch let exception {
-                    completion(nil, exception  as? APIException)
+                    completion(nil, exception as? APIException)
                 }
             } else {
                 completion(nil, APIException.unknownException)
@@ -40,8 +40,8 @@ extension MarvelClient: MarvelClientProtocol {
                 completion(nil, error)
             } else if let resultData = response?.data {
                 do {
-                    let playerMaster = try JSONDecoder().decode(ComicDataWrapper.self, from: resultData)
-                    completion(playerMaster, nil)
+                    let comicDataWrapper = try JSONDecoder().decode(ComicDataWrapper.self, from: resultData)
+                    completion(comicDataWrapper, nil)
                 } catch let exception {
                     completion(nil, exception  as? APIException)
                 }
