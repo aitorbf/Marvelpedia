@@ -13,4 +13,6 @@ protocol CharactersPresenterProtocol: BasePresenterProtocol {
     func bind(view: CharactersViewControllerProtocol)
     
     func loadMarvelCharacters()
+    
+    func searchCharactersByName(name: String)
 }

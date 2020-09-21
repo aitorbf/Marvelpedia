@@ -14,5 +14,9 @@ enum Constants {
         enum Host {
             static let marvel = "https://gateway.marvel.com:443"
         }
+        
+        enum ResultLimit {
+            static let marvel = 100
+        }
     }
 }

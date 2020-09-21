@@ -21,6 +21,10 @@ final class CharactersPresenter: BasePresenter {
             }
         }
     }
+    private var offset = 0
+    private var total: Int?
+    private var searchText = ""
+    private var characters = [Character]()
     
     // MARK: Public variables
     
@@ -30,22 +34,35 @@ final class CharactersPresenter: BasePresenter {
     // MARK: Private methods
 
     private func loadCharacters() {
-        DispatchQueue.global(qos: .background).async {
+        if total == nil || offset < total! {
             self.loadCharactersUseCaseInProgress = true
-            self.loadCharactersUseCase?.execute() {
-                (response, error) in
-                self.loadCharactersUseCaseInProgress = false
-                if error != nil {
-                    DispatchQueue.main.async {
-                        self.view?.showError()
-                    }
-                } else if let characterCollection = response {
-                    DispatchQueue.main.async {
-                        self.view?.displayCharacters(characterCollection.characters ?? [Character]())
+            DispatchQueue.global(qos: .background).async {
+                self.loadCharactersUseCase?.execute(offset: self.offset, name: self.searchText) {
+                    (response, error) in
+                    self.loadCharactersUseCaseInProgress = false
+                    if error != nil {
+                        DispatchQueue.main.async {
+                            self.view?.showError()
+                        }
+                    } else if let characterCollection = response {
+                        DispatchQueue.main.async {
+                            self.offset += characterCollection.count ?? 0
+                            self.total = characterCollection.total
+                            self.characters += characterCollection.characters ?? [Character]()
+                            self.view?.displayCharacters(self.characters)
+                        }
                     }
                 }
             }
         }
+    }
+    
+    private func loadCharactersByName(name: String) {
+        total = nil
+        offset = 0
+        characters = [Character]()
+        searchText = name
+        loadCharacters()
     }
 }
 
@@ -74,5 +91,9 @@ extension CharactersPresenter: CharactersPresenterProtocol {
     
     func loadMarvelCharacters() {
         loadCharacters()
+    }
+    
+    func searchCharactersByName(name: String) {
+        loadCharactersByName(name: name)
     }
 }

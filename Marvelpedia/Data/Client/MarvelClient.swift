@@ -15,8 +15,8 @@ final class MarvelClient: BaseClient {
 
 extension MarvelClient: MarvelClientProtocol {
     
-    func loadCharacters(_ completion: @escaping (CharacterDataWrapper?, APIException?) -> Void) {
-        request(.characters(host: host, version: .v1)) {
+    func loadCharacters(offset: Int, name: String, _ completion: @escaping (CharacterDataWrapper?, APIException?) -> Void) {
+        request(Endpoint.characters(offset: offset, name: name, host: host, version: APIVersion.v1)) {
             (response, error) in
             if error != nil {
                 completion(nil, error)

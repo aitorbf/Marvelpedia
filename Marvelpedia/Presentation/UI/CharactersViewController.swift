@@ -19,6 +19,7 @@ final class CharactersViewController: BaseViewController {
             charactersCollectionView.register(UINib(nibName: "CharacterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         }
     }
+    @IBOutlet weak var emptyCollectionLabel: UILabel!
     
     // MARK: Public variables
     
@@ -31,12 +32,23 @@ final class CharactersViewController: BaseViewController {
     
     // MARK: - Private variables
     
-    private var characters = [Character]()
+    private var characters = [Character]() {
+        didSet {
+            emptyCollectionLabel.isHidden = characters.count != 0
+        }
+    }
+    private var searchController: UISearchController?
+    private var searchText = "" {
+        didSet {
+            presenter?.searchCharactersByName(name: searchText)
+        }
+    }
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createLoadingSpinner(onView: self.view)
         bindPresenter()
         presenter?.viewDidLoad()
     }
@@ -49,6 +61,12 @@ final class CharactersViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presenter?.viewDidAppear()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        presenter?.viewDidDisappear()
+        removeSpinner()
     }
 
     // MARK: - Private functions
@@ -73,10 +91,10 @@ final class CharactersViewController: BaseViewController {
     }
     
     private func setupSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
-        let searchBar = searchController.searchBar
-        searchBar.tintColor = UIColor.MarvelRed()
-        if let searchTextField = searchBar.value(forKey: "searchField") as? UITextField {
+        searchController = UISearchController(searchResultsController: nil)
+        let searchBar = searchController?.searchBar
+        searchBar?.tintColor = UIColor.MarvelRed()
+        if let searchTextField = searchBar?.value(forKey: "searchField") as? UITextField {
             searchTextField.backgroundColor = UIColor.white
             let glassIconView = searchTextField.leftView as! UIImageView
             glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
@@ -87,8 +105,10 @@ final class CharactersViewController: BaseViewController {
                 clearButton.tintColor = UIColor.MarvelRed()
             }
         }
-        searchController.searchResultsUpdater = self
+        searchBar?.delegate = self
+        searchController?.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
 
@@ -107,11 +127,11 @@ extension CharactersViewController: CharactersViewControllerProtocol {
     }
     
     func showLoading() {
-        // Show loading
+        self.showSpinner()
     }
     
     func hideLoading() {
-        // Hide loading
+        self.hideSpinner()
     }
     
     func showError() {
@@ -133,17 +153,41 @@ extension CharactersViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CharacterCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CharacterCollectionViewCell
         cell.drawData(character: characters[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+         if (indexPath.row == characters.count - 1 ) {
+            presenter?.loadMarvelCharacters()
+         }
+    }
 }
 
-// MARK: - UISearchBar Delegate
+// MARK: - UISearchBar and UISearchControllerDelegate Delegate
 
-extension CharactersViewController: UISearchResultsUpdating {
+extension CharactersViewController: UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchText = searchBar.text ?? ""
+        searchController?.isActive = false
+        searchBar.text = searchText
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if searchText != "" {
+            searchText = ""
+        }
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.text = searchText
+    }
+    
     func updateSearchResults(for searchController: UISearchController) {
         // Do nothing
     }
+    
+    
 }

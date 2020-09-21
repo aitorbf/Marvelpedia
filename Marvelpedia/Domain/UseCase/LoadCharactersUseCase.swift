@@ -17,8 +17,8 @@ final class LoadCharactersUseCase: BaseUseCase {
 
 extension LoadCharactersUseCase: LoadCharactersUseCaseProtocol {
     
-    func execute(_ completion: @escaping (CharacterCollection?, APIException?) -> Void) {
-        characterProvider?.loadCharacters() {
+    func execute(offset: Int, name: String, _ completion: @escaping (CharacterCollection?, APIException?) -> Void) {
+        characterProvider?.loadCharacters(offset: offset, name: name) {
             (response, error) in
             if error != nil {
                 completion(nil, error)

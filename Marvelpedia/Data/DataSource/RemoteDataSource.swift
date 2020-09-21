@@ -19,8 +19,8 @@ final class RemoteDataSource {
 
 extension RemoteDataSource: RemoteDataSourceProtocol {
     
-    func loadCharacters(_ completion: @escaping (CharacterDataWrapper?, APIException?) -> Void) {
-        marvelClient?.loadCharacters() {
+    func loadCharacters(offset: Int, name: String, _ completion: @escaping (CharacterDataWrapper?, APIException?) -> Void) {
+        marvelClient?.loadCharacters(offset: offset, name: name) {
             (response, error) in
             if error != nil {
                 completion(nil, error)

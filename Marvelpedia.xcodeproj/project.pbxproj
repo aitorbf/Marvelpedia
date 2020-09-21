@@ -158,6 +158,9 @@
 		5BD21B3D25177EC200BCCC07 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD21B3C25177EC200BCCC07 /* UIColorExtension.swift */; };
 		5BD21B3E25177EC200BCCC07 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD21B3C25177EC200BCCC07 /* UIColorExtension.swift */; };
 		5BD21B3F25177EC200BCCC07 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD21B3C25177EC200BCCC07 /* UIColorExtension.swift */; };
+		5BD21B442517CF1900BCCC07 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD21B432517CF1900BCCC07 /* UIViewControllerExtension.swift */; };
+		5BD21B452517CF1900BCCC07 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD21B432517CF1900BCCC07 /* UIViewControllerExtension.swift */; };
+		5BD21B462517CF1900BCCC07 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD21B432517CF1900BCCC07 /* UIViewControllerExtension.swift */; };
 		5BFB000025126A0C00D0098B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBFFFD25126A0C00D0098B /* Image.swift */; };
 		5BFB000225126A8200D0098B /* ComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB000125126A8200D0098B /* ComicList.swift */; };
 		5BFB000325126A8200D0098B /* ComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB000125126A8200D0098B /* ComicList.swift */; };
@@ -314,6 +317,7 @@
 		5BD21B282517686900BCCC07 /* character_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character_placeholder.png; sourceTree = "<group>"; };
 		5BD21B322517687200BCCC07 /* marvel_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = marvel_background.jpg; sourceTree = "<group>"; };
 		5BD21B3C25177EC200BCCC07 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		5BD21B432517CF1900BCCC07 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		5BFB000125126A8200D0098B /* ComicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicList.swift; sourceTree = "<group>"; };
 		5BFB000525126ADF00D0098B /* ComicSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicSummary.swift; sourceTree = "<group>"; };
 		5BFB000925126B1D00D0098B /* StoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryList.swift; sourceTree = "<group>"; };
@@ -576,6 +580,7 @@
 			children = (
 				5BC319062516864900407551 /* StringExtension.swift */,
 				5BD21B3C25177EC200BCCC07 /* UIColorExtension.swift */,
+				5BD21B432517CF1900BCCC07 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1015,6 +1020,7 @@
 				5BFBFFFA251269D600D0098B /* Url.swift in Sources */,
 				5BBB1FE62514D74700D107FF /* CharacterMapper.swift in Sources */,
 				5BFB002E2512B8AD00D0098B /* TextObject.swift in Sources */,
+				5BD21B442517CF1900BCCC07 /* UIViewControllerExtension.swift in Sources */,
 				5BFB001E25126C0000D0098B /* SeriesSummary.swift in Sources */,
 				5BBB207325150D8300D107FF /* AsynchronousOperation.swift in Sources */,
 				5BFB001225126B9300D0098B /* EventList.swift in Sources */,
@@ -1085,6 +1091,7 @@
 				5BBB1FA32514D05600D107FF /* CharacterProviderProtocol.swift in Sources */,
 				5BBB20262514E73800D107FF /* LoadCharactersUseCaseProtocol.swift in Sources */,
 				5BFBFFF32512681B00D0098B /* CharacterDataContainer.swift in Sources */,
+				5BD21B452517CF1900BCCC07 /* UIViewControllerExtension.swift in Sources */,
 				5BBB207B25150DAF00D107FF /* AsynchronousBlockOperation.swift in Sources */,
 				5BFB00232512B53B00D0098B /* ComicDataWrapper.swift in Sources */,
 				5BBB1FC42514D15800D107FF /* Character.swift in Sources */,
@@ -1162,6 +1169,7 @@
 				5BBB1FA42514D05600D107FF /* CharacterProviderProtocol.swift in Sources */,
 				5BBB20272514E73800D107FF /* LoadCharactersUseCaseProtocol.swift in Sources */,
 				5BFBFFF42512681B00D0098B /* CharacterDataContainer.swift in Sources */,
+				5BD21B462517CF1900BCCC07 /* UIViewControllerExtension.swift in Sources */,
 				5BBB207C25150DAF00D107FF /* AsynchronousBlockOperation.swift in Sources */,
 				5BFB00242512B53B00D0098B /* ComicDataWrapper.swift in Sources */,
 				5BBB1FC52514D15800D107FF /* Character.swift in Sources */,

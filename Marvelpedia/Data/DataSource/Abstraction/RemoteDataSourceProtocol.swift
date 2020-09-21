@@ -10,7 +10,7 @@ import Foundation
 
 protocol RemoteDataSourceProtocol {
     
-    func loadCharacters(_ completion: @escaping (_ response: CharacterDataWrapper?, _ error: APIException?) -> Void)
+    func loadCharacters(offset: Int, name: String, _ completion: @escaping (_ response: CharacterDataWrapper?, _ error: APIException?) -> Void)
     
     func loadCharacterComics(characterId: Int, _ completion: @escaping (_ response: ComicDataWrapper?, _ error: APIException?) -> Void)
 }

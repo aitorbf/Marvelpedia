@@ -10,5 +10,5 @@ import Foundation
 
 protocol LoadCharactersUseCaseProtocol {
     
-    func execute(_ completion: @escaping (_ response: CharacterCollection?, _ error: APIException?) -> Void)
+    func execute(offset: Int, name: String, _ completion: @escaping (_ response: CharacterCollection?, _ error: APIException?) -> Void)
 }

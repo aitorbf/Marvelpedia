@@ -19,8 +19,8 @@ final class CharacterProvider {
 
 extension CharacterProvider: CharacterProviderProtocol {
     
-    func loadCharacters(_ completion: @escaping (CharacterCollection?, APIException?) -> Void) {
-        remoteDataSource?.loadCharacters() {
+    func loadCharacters(offset: Int, name: String, _ completion: @escaping (CharacterCollection?, APIException?) -> Void) {
+        remoteDataSource?.loadCharacters(offset: offset, name: name) {
             (response, error) in
             if error != nil {
                 completion(nil, error)

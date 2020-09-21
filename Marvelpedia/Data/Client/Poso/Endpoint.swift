@@ -13,14 +13,14 @@ enum Endpoint {
     
     // MARK: Endpoints
     
-    case characters(host: APIHost, version: APIVersion)
+    case characters(offset: Int, name: String, host: APIHost, version: APIVersion)
     case characterComics(characterId: Int, host: APIHost, version: APIVersion)
     
     // MARK: Public variables
     
     var host: String {
         switch self {
-        case .characters(let host, _),
+        case .characters(_, _, let host, _),
              .characterComics(_, let host, _):
             return getHostURL(host)
         }
@@ -28,7 +28,7 @@ enum Endpoint {
     
     var version: String {
         switch self {
-        case .characters(_, let apiVersion),
+        case .characters(_, _, _, let apiVersion),
              .characterComics(_, _, let apiVersion):
             return apiVersion.rawValue
         }
@@ -36,7 +36,7 @@ enum Endpoint {
     
     var path: String {
         switch self {
-        case .characters(_, _):
+        case .characters(_, _, _, _):
             return "public/characters"
         case .characterComics(let characterId, _, _):
             return "public/characters/\(characterId)/comics"
@@ -51,8 +51,14 @@ enum Endpoint {
     
     var parameters: Parameters? {
         switch self {
-        case .characters(let host, _),
-             .characterComics(_, let host, _):
+        case .characters(let offset, let name, let host, _):
+            var parameters = getParameters(host)
+            parameters.updateValue(offset, forKey: "offset")
+            if name != "" {
+                parameters.updateValue(name, forKey: "nameStartsWith")
+            }
+            return parameters
+        case .characterComics(_, let host, _):
             return getParameters(host)
         }
     }
@@ -80,7 +86,8 @@ enum Endpoint {
             let parameters = [
                 "ts"        : timestamp,
                 "apikey"    : publicMarvelAPIKey,
-                "hash"      : hash
+                "hash"      : hash,
+                "limit"     : Constants.API.ResultLimit.marvel
             ] as [String : Any]
             return parameters
         }

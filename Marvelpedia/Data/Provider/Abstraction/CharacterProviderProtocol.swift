@@ -10,5 +10,5 @@ import Foundation
 
 protocol CharacterProviderProtocol {
     
-    func loadCharacters(_ completion: @escaping (_ response: CharacterCollection?, _ error: APIException?) -> Void)
+    func loadCharacters(offset: Int, name: String, _ completion: @escaping (_ response: CharacterCollection?, _ error: APIException?) -> Void)
 }
