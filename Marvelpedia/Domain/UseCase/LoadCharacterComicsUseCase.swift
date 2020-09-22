@@ -17,8 +17,8 @@ final class LoadCharacterComicsUseCase: BaseUseCase {
 
 extension LoadCharacterComicsUseCase: LoadCharacterComicsUseCaseProtocol {
     
-    func execute(characterId: Int, _ completion: @escaping (ComicCollection?, APIException?) -> Void) {
-        comicProvider?.loadCharacterComics(characterId: characterId) {
+    func execute(characterId: Int, offset: Int, _ completion: @escaping (ComicCollection?, APIException?) -> Void) {
+        comicProvider?.loadCharacterComics(characterId: characterId, offset: offset) {
             (response, error) in
             if error != nil {
                 completion(nil, error)

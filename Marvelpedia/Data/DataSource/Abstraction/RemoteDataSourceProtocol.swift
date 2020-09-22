@@ -12,5 +12,5 @@ protocol RemoteDataSourceProtocol {
     
     func loadCharacters(offset: Int, name: String, _ completion: @escaping (_ response: CharacterDataWrapper?, _ error: APIException?) -> Void)
     
-    func loadCharacterComics(characterId: Int, _ completion: @escaping (_ response: ComicDataWrapper?, _ error: APIException?) -> Void)
+    func loadCharacterComics(characterId: Int, offset: Int, _ completion: @escaping (_ response: ComicDataWrapper?, _ error: APIException?) -> Void)
 }

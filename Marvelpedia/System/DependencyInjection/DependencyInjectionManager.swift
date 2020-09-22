@@ -19,6 +19,7 @@ class DependencyInjectionManager {
     init() {
         registerViewControllers()
         registerPresenters()
+        registerRouters()
         registerUseCases()
         registerProviders()
         registerDataSources()
@@ -33,13 +34,30 @@ class DependencyInjectionManager {
             viewController.presenter = resolver.resolve(CharactersPresenterProtocol.self)
             return viewController
         }
+        container.register(CharacterDetailViewController.self) { (resolver: Resolver, character: Character) in
+            let viewController = CharacterDetailViewController(character: character)
+            viewController.presenter = resolver.resolve(CharacterDetailPresenterProtocol.self)
+            return viewController
+        }
     }
     
     private func registerPresenters() {
         container.register(CharactersPresenterProtocol.self) { resolver in
             let presenter = CharactersPresenter()
             presenter.loadCharactersUseCase = resolver.resolve(LoadCharactersUseCaseProtocol.self)
+            presenter.router = resolver.resolve(CharactersRouterProtocol.self)
             return presenter
+        }
+        container.register(CharacterDetailPresenterProtocol.self) { resolver in
+            let presenter = CharacterDetailPresenter()
+            presenter.loadCharacterComicsUseCase = resolver.resolve(LoadCharacterComicsUseCaseProtocol.self)
+            return presenter
+        }
+    }
+    
+    private func registerRouters() {
+        container.register(CharactersRouterProtocol.self) { resolver in
+            return CharactersRouter()
         }
     }
     

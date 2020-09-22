@@ -14,14 +14,14 @@ enum Endpoint {
     // MARK: Endpoints
     
     case characters(offset: Int, name: String, host: APIHost, version: APIVersion)
-    case characterComics(characterId: Int, host: APIHost, version: APIVersion)
+    case characterComics(characterId: Int, offset: Int, host: APIHost, version: APIVersion)
     
     // MARK: Public variables
     
     var host: String {
         switch self {
         case .characters(_, _, let host, _),
-             .characterComics(_, let host, _):
+             .characterComics(_, _, let host, _):
             return getHostURL(host)
         }
     }
@@ -29,7 +29,7 @@ enum Endpoint {
     var version: String {
         switch self {
         case .characters(_, _, _, let apiVersion),
-             .characterComics(_, _, let apiVersion):
+             .characterComics(_, _, _, let apiVersion):
             return apiVersion.rawValue
         }
     }
@@ -38,7 +38,7 @@ enum Endpoint {
         switch self {
         case .characters(_, _, _, _):
             return "public/characters"
-        case .characterComics(let characterId, _, _):
+        case .characterComics(let characterId, _, _, _):
             return "public/characters/\(characterId)/comics"
         }
     }
@@ -52,14 +52,16 @@ enum Endpoint {
     var parameters: Parameters? {
         switch self {
         case .characters(let offset, let name, let host, _):
-            var parameters = getParameters(host)
-            parameters.updateValue(offset, forKey: "offset")
+            var parameters = getParameters(host, offset)
+            parameters.updateValue(Constants.API.ResultLimit.marvel.characters, forKey: "limit")
             if name != "" {
                 parameters.updateValue(name, forKey: "nameStartsWith")
             }
             return parameters
-        case .characterComics(_, let host, _):
-            return getParameters(host)
+        case .characterComics(_, let offset, let host, _):
+            var parameters = getParameters(host, offset)
+            parameters.updateValue(Constants.API.ResultLimit.marvel.comics, forKey: "limit")
+            return parameters
         }
     }
     
@@ -76,7 +78,7 @@ enum Endpoint {
         }
     }
     
-    private func getParameters(_ host: APIHost) -> [String : Any] {
+    private func getParameters(_ host: APIHost, _ offset: Int) -> [String : Any] {
         switch host {
         case .marvel:
             let publicMarvelAPIKey = Bundle.main.object(forInfoDictionaryKey: "PublicMarvelAPIKey") as! String
@@ -87,7 +89,7 @@ enum Endpoint {
                 "ts"        : timestamp,
                 "apikey"    : publicMarvelAPIKey,
                 "hash"      : hash,
-                "limit"     : Constants.API.ResultLimit.marvel
+                "offset"    : offset
             ] as [String : Any]
             return parameters
         }
