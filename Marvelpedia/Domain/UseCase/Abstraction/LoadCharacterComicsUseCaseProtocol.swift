@@ -10,5 +10,5 @@ import Foundation
 
 protocol LoadCharacterComicsUseCaseProtocol {
     
-    func execute(characterId: Int, _ completion: @escaping (_ response: ComicCollection?, _ error: APIException?) -> Void)
+    func execute(characterId: Int, offset: Int, _ completion: @escaping (_ response: ComicCollection?, _ error: APIException?) -> Void)
 }

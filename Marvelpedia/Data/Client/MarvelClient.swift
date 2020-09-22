@@ -33,8 +33,8 @@ extension MarvelClient: MarvelClientProtocol {
         }
     }
     
-    func loadCharacterComics(characterId: Int, _ completion: @escaping (ComicDataWrapper?, APIException?) -> Void) {
-        request(.characterComics(characterId: characterId, host: host, version: .v1)) {
+    func loadCharacterComics(characterId: Int, offset: Int, _ completion: @escaping (ComicDataWrapper?, APIException?) -> Void) {
+        request(.characterComics(characterId: characterId, offset: offset, host: host, version: .v1)) {
             (response, error) in
             if error != nil {
                 completion(nil, error)

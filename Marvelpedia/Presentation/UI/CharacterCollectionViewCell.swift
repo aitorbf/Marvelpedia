@@ -21,14 +21,14 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    // MARK: - Private variables
+    // MARK: - Private constants
     
-    let placeholderImage = "character_placeholder.png"
+    private let placeholderImage = "character_placeholder.png"
 
     // MARK: - Public Functions
     
     func drawData(character: Character) {
-        self.layer.cornerRadius = 5
+        self.layer.cornerRadius = 10
         if let thumbnail = character.thumbnail, let url = URL(string: thumbnail) {
             imageView.af.setImage(withURL: url, placeholderImage: UIImage(named: placeholderImage))
         }

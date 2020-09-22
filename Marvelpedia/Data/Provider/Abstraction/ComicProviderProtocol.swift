@@ -10,5 +10,5 @@ import Foundation
 
 protocol ComicProviderProtocol {
     
-    func loadCharacterComics(characterId: Int, _ completion: @escaping (_ response: ComicCollection?, _ error: APIException?) -> Void)
+    func loadCharacterComics(characterId: Int, offset: Int, _ completion: @escaping (_ response: ComicCollection?, _ error: APIException?) -> Void)
 }

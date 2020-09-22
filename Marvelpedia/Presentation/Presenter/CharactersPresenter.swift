@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aitor. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class CharactersPresenter: BasePresenter {
     
@@ -25,18 +25,20 @@ final class CharactersPresenter: BasePresenter {
     private var total: Int?
     private var searchText = ""
     private var characters = [Character]()
+    private var navigationController: UINavigationController? = nil
     
     // MARK: Public variables
     
     weak var view: CharactersViewControllerProtocol?
     var loadCharactersUseCase: LoadCharactersUseCaseProtocol?
+    var router: CharactersRouterProtocol?
     
     // MARK: Private methods
 
     private func loadCharacters() {
         if total == nil || offset < total! {
-            self.loadCharactersUseCaseInProgress = true
             DispatchQueue.global(qos: .background).async {
+                self.loadCharactersUseCaseInProgress = true
                 self.loadCharactersUseCase?.execute(offset: self.offset, name: self.searchText) {
                     (response, error) in
                     self.loadCharactersUseCaseInProgress = false
@@ -64,19 +66,23 @@ final class CharactersPresenter: BasePresenter {
         searchText = name
         loadCharacters()
     }
+    
+    private func loadCharacterDetail(character: Character) {
+        if let navigationController = self.navigationController {
+            self.router?.goToCharacterDetail(navigationController: navigationController, character: character)
+        }
+    }
 }
 
 // MARK: - CharactersPresenterProtocol protocol conformance
 
 extension CharactersPresenter: CharactersPresenterProtocol {
     
-    /// Tells the presenter that the view has loaded
     func viewDidLoad() {
         view?.setupView()
         loadCharacters()
     }
     
-    /// Tells the presenter that the view will appear
     func viewWillAppear() {
         // Do nothing
     }
@@ -95,5 +101,10 @@ extension CharactersPresenter: CharactersPresenterProtocol {
     
     func searchCharactersByName(name: String) {
         loadCharactersByName(name: name)
+    }
+    
+    func characterSelected(navigationController: UINavigationController, character: Character) {
+        self.navigationController = navigationController
+        loadCharacterDetail(character: character)
     }
 }

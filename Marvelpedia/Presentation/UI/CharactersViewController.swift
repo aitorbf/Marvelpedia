@@ -77,17 +77,19 @@ final class CharactersViewController: BaseViewController {
     
     private func setupNavigationBar() {
         title = navigationBarTitle
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white] , for: .normal)
         if let navigationBar = navigationController?.navigationBar {
             navigationBar.prefersLargeTitles = true
+            navigationBar.tintColor = UIColor.white
             let navBarAppearance = UINavigationBarAppearance()
                 navBarAppearance.configureWithOpaqueBackground()
                 navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
                 navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.backgroundColor = .MarvelRed()
-            navigationController?.navigationBar.standardAppearance = navBarAppearance
-            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+                navBarAppearance.backgroundColor = .MarvelRed()
+            navigationBar.standardAppearance = navBarAppearance
+            navigationBar.scrollEdgeAppearance = navBarAppearance
+            navigationBar.compactAppearance = navBarAppearance
         }
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white] , for: .normal)
     }
     
     private func setupSearchBar() {
@@ -96,6 +98,7 @@ final class CharactersViewController: BaseViewController {
         searchBar?.tintColor = UIColor.MarvelRed()
         if let searchTextField = searchBar?.value(forKey: "searchField") as? UITextField {
             searchTextField.backgroundColor = UIColor.white
+            searchTextField.textColor = UIColor.black
             let glassIconView = searchTextField.leftView as! UIImageView
             glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
             glassIconView.tintColor = UIColor.MarvelRed()
@@ -141,15 +144,14 @@ extension CharactersViewController: CharactersViewControllerProtocol {
 
 // MARK: - UICollectionView Data Source and Delegate
 
-extension CharactersViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CharactersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width / 2.0
-        return CGSize(width: width, height: 220.0)
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 2, bottom: 10, right: 2)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -162,6 +164,13 @@ extension CharactersViewController: UICollectionViewDataSource, UICollectionView
          if (indexPath.row == characters.count - 1 ) {
             presenter?.loadMarvelCharacters()
          }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let navigationController = navigationController {
+            let character = characters[indexPath.row]
+            presenter?.characterSelected(navigationController: navigationController, character: character)
+        }
     }
 }
 
@@ -188,6 +197,4 @@ extension CharactersViewController: UISearchResultsUpdating, UISearchBarDelegate
     func updateSearchResults(for searchController: UISearchController) {
         // Do nothing
     }
-    
-    
 }

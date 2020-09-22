@@ -32,8 +32,8 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
         }
     }
     
-    func loadCharacterComics(characterId: Int, _ completion: @escaping (ComicDataWrapper?, APIException?) -> Void) {
-        marvelClient?.loadCharacterComics(characterId: characterId) {
+    func loadCharacterComics(characterId: Int, offset: Int, _ completion: @escaping (ComicDataWrapper?, APIException?) -> Void) {
+        marvelClient?.loadCharacterComics(characterId: characterId, offset: offset) {
             (response, error) in
             if error != nil {
                 completion(nil, error)

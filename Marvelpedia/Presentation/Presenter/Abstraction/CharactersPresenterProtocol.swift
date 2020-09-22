@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aitor. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol CharactersPresenterProtocol: BasePresenterProtocol {
     
@@ -15,4 +15,7 @@ protocol CharactersPresenterProtocol: BasePresenterProtocol {
     func loadMarvelCharacters()
     
     func searchCharactersByName(name: String)
+    
+    func characterSelected(navigationController: UINavigationController,
+                            character: Character)
 }

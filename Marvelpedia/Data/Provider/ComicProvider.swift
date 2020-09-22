@@ -19,8 +19,8 @@ final class ComicProvider {
 
 extension ComicProvider: ComicProviderProtocol {
     
-    func loadCharacterComics(characterId: Int, _ completion: @escaping (ComicCollection?, APIException?) -> Void) {
-        remoteDataSource?.loadCharacterComics(characterId: characterId) {
+    func loadCharacterComics(characterId: Int, offset: Int, _ completion: @escaping (ComicCollection?, APIException?) -> Void) {
+        remoteDataSource?.loadCharacterComics(characterId: characterId, offset: offset) {
             (response, error) in
             if error != nil {
                 completion(nil, error)
