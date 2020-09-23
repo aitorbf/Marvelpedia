@@ -16,7 +16,7 @@ extension CharactersRouter: CharactersRouterProtocol {
     
     func goToCharacterDetail(navigationController: UINavigationController, character: Character) {
         self.navigationController = navigationController
-        if let appDelegate = AppDelegate.originalAppDelegate {
+        if let appDelegate = SceneDelegate.originalSceneDelegate {
             if let characterDetailViewController = appDelegate.dependencyInjectionManager.container.resolve(CharacterDetailViewController.self, argument: character) {
                 goTo(characterDetailViewController)
             }

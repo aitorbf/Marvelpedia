@@ -10,7 +10,6 @@ import Foundation
 
 enum APIException: Error {
     
-    case connectivityException
     case parametersErrorException
     case invalidRefererOrHashException
     case methodNotAllowedException

@@ -48,7 +48,6 @@ class BaseClient {
                         completion(nil, exception as? APIException)
                     }
                 }
-                completion(nil, APIException.connectivityException)
             }
         })
     }
@@ -68,6 +67,6 @@ class BaseClient {
                    return .forbiddenException
                }
            }
-           return .connectivityException
+           return .unknownException
        }
 }

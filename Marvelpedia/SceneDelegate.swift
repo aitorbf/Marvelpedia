@@ -9,18 +9,29 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    // MARK: - Public constants
 
+    let dependencyInjectionManager = DependencyInjectionManager()
+    
+    // MARK: - Public variables
+    
+    static var originalSceneDelegate: SceneDelegate!
     var window: UIWindow?
     var navigationController: UINavigationController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
+        if let _ = NSClassFromString("XCTest") { return }
+        
+        SceneDelegate.originalSceneDelegate = self
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.overrideUserInterfaceStyle = .light
-        if let charactersViewController = AppDelegate.originalAppDelegate.dependencyInjectionManager.container.resolve(CharactersViewController.self) {
+        if let charactersViewController = SceneDelegate.originalSceneDelegate.dependencyInjectionManager.container.resolve(CharactersViewController.self) {
             navigationController = UINavigationController(rootViewController: charactersViewController)
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()

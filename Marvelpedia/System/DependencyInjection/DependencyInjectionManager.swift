@@ -64,13 +64,11 @@ class DependencyInjectionManager {
     private func registerUseCases() {
         container.register(LoadCharactersUseCaseProtocol.self) { resolver in
             let useCase = LoadCharactersUseCase()
-            useCase.networkProvider = resolver.resolve(NetworkProviderProtocol.self)
             useCase.characterProvider = resolver.resolve(CharacterProviderProtocol.self)
             return useCase
         }
         container.register(LoadCharacterComicsUseCaseProtocol.self) { resolver in
             let useCase = LoadCharacterComicsUseCase()
-            useCase.networkProvider = resolver.resolve(NetworkProviderProtocol.self)
             useCase.comicProvider = resolver.resolve(ComicProviderProtocol.self)
             return useCase
         }
