@@ -83,11 +83,13 @@ class DependencyInjectionManager {
         container.register(CharacterProviderProtocol.self) { resolver in
             let provider = CharacterProvider()
             provider.remoteDataSource = resolver.resolve(RemoteDataSourceProtocol.self)
+            provider.localDataSource = resolver.resolve(LocalDataSourceProtocol.self)
             return provider
         }
         container.register(ComicProviderProtocol.self) { resolver in
             let provider = ComicProvider()
             provider.remoteDataSource = resolver.resolve(RemoteDataSourceProtocol.self)
+            provider.localDataSource = resolver.resolve(LocalDataSourceProtocol.self)
             return provider
         }
     }
@@ -97,6 +99,9 @@ class DependencyInjectionManager {
             let dataSource = RemoteDataSource()
             dataSource.marvelClient = resolver.resolve(MarvelClientProtocol.self)
             return dataSource
+        }
+        container.register(LocalDataSourceProtocol.self) { resolver in
+            return LocalDataSource()
         }
     }
     

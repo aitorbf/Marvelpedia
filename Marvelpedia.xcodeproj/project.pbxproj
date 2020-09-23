@@ -80,6 +80,12 @@
 		5B9B9CEC251A940E0018C7EB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB20C025162BFF00D107FF /* BaseViewController.swift */; };
 		5B9B9CF0251A94110018C7EB /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBFFBC251228B000D0098B /* CharactersViewController.swift */; };
 		5B9B9CF4251A94120018C7EB /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBFFBC251228B000D0098B /* CharactersViewController.swift */; };
+		5B9B9D05251A9AE40018C7EB /* LocalDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B9D04251A9AE40018C7EB /* LocalDataSourceProtocol.swift */; };
+		5B9B9D06251A9AE40018C7EB /* LocalDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B9D04251A9AE40018C7EB /* LocalDataSourceProtocol.swift */; };
+		5B9B9D07251A9AE40018C7EB /* LocalDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B9D04251A9AE40018C7EB /* LocalDataSourceProtocol.swift */; };
+		5B9B9D0C251A9DE20018C7EB /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B9D0B251A9DE20018C7EB /* LocalDataSource.swift */; };
+		5B9B9D0D251A9DE20018C7EB /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B9D0B251A9DE20018C7EB /* LocalDataSource.swift */; };
+		5B9B9D0E251A9DE20018C7EB /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B9D0B251A9DE20018C7EB /* LocalDataSource.swift */; };
 		5BBB1FA22514D05600D107FF /* CharacterProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB1FA12514D05600D107FF /* CharacterProviderProtocol.swift */; };
 		5BBB1FA32514D05600D107FF /* CharacterProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB1FA12514D05600D107FF /* CharacterProviderProtocol.swift */; };
 		5BBB1FA42514D05600D107FF /* CharacterProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB1FA12514D05600D107FF /* CharacterProviderProtocol.swift */; };
@@ -329,6 +335,8 @@
 		5B74512C25166A86007012F9 /* CharactersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersViewController.xib; sourceTree = "<group>"; };
 		5B9B9CDA251A86AF0018C7EB /* CharacterInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoTableViewCell.swift; sourceTree = "<group>"; };
 		5B9B9CDB251A86AF0018C7EB /* CharacterInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterInfoTableViewCell.xib; sourceTree = "<group>"; };
+		5B9B9D04251A9AE40018C7EB /* LocalDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceProtocol.swift; sourceTree = "<group>"; };
+		5B9B9D0B251A9DE20018C7EB /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		5BBB1FA12514D05600D107FF /* CharacterProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterProviderProtocol.swift; sourceTree = "<group>"; };
 		5BBB1FA82514D07400D107FF /* ComicProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicProviderProtocol.swift; sourceTree = "<group>"; };
 		5BBB1FB22514D08900D107FF /* CharacterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterProvider.swift; sourceTree = "<group>"; };
@@ -502,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				5B6D362B2514A46100D8EFF0 /* RemoteDataSourceProtocol.swift */,
+				5B9B9D04251A9AE40018C7EB /* LocalDataSourceProtocol.swift */,
 			);
 			path = Abstraction;
 			sourceTree = "<group>";
@@ -809,6 +818,7 @@
 			children = (
 				5B6D36292514A42700D8EFF0 /* Abstraction */,
 				5B6D36332514A53B00D8EFF0 /* RemoteDataSource.swift */,
+				5B9B9D0B251A9DE20018C7EB /* LocalDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -1110,6 +1120,7 @@
 				5BBB1FDE2514D3C500D107FF /* ComicCollection.swift in Sources */,
 				5BFB000E25126B6300D0098B /* StorySummary.swift in Sources */,
 				5BFBFFEE251266BC00D0098B /* CharacterDataWrapper.swift in Sources */,
+				5B9B9D0C251A9DE20018C7EB /* LocalDataSource.swift in Sources */,
 				5BFBFFFA251269D600D0098B /* Url.swift in Sources */,
 				5BBB1FE62514D74700D107FF /* CharacterMapper.swift in Sources */,
 				5BFB002E2512B8AD00D0098B /* TextObject.swift in Sources */,
@@ -1125,6 +1136,7 @@
 				5BBB200A2514E52500D107FF /* BaseUseCase.swift in Sources */,
 				5BBB20A625162A4B00D107FF /* CharactersViewControllerProtocol.swift in Sources */,
 				5B6D361E2513F75F00D8EFF0 /* APIErrorCode.swift in Sources */,
+				5B9B9D05251A9AE40018C7EB /* LocalDataSourceProtocol.swift in Sources */,
 				5BFBFFB9251228B000D0098B /* AppDelegate.swift in Sources */,
 				5B6D36002513E15600D8EFF0 /* Endpoint.swift in Sources */,
 				5BBB201E2514E67E00D107FF /* NetworkProvider.swift in Sources */,
@@ -1228,6 +1240,7 @@
 				5BFB003B2512BB6E00D0098B /* CreatorList.swift in Sources */,
 				5BC319082516864900407551 /* StringExtension.swift in Sources */,
 				5BBB210C25164E7C00D107FF /* DependencyInjectionManager.swift in Sources */,
+				5B9B9D06251A9AE40018C7EB /* LocalDataSourceProtocol.swift in Sources */,
 				5B6D36352514A53B00D8EFF0 /* RemoteDataSource.swift in Sources */,
 				5BBB1FD52514D2D900D107FF /* Comic.swift in Sources */,
 				5BBB209B2515102700D107FF /* CharactersPresenter.swift in Sources */,
@@ -1240,6 +1253,7 @@
 				5BBB207425150D8300D107FF /* AsynchronousOperation.swift in Sources */,
 				5B66E5712518E53000F3ABC8 /* CharactersRouterProtocol.swift in Sources */,
 				5BBB208D25150F1700D107FF /* BasePresenter.swift in Sources */,
+				5B9B9D0D251A9DE20018C7EB /* LocalDataSource.swift in Sources */,
 				5BFB001725126BBF00D0098B /* EventSummary.swift in Sources */,
 				5B9B9CF0251A94110018C7EB /* CharactersViewController.swift in Sources */,
 				5BD21B3E25177EC200BCCC07 /* UIColorExtension.swift in Sources */,
@@ -1317,6 +1331,7 @@
 				5BFB003C2512BB6E00D0098B /* CreatorList.swift in Sources */,
 				5BC319092516864900407551 /* StringExtension.swift in Sources */,
 				5BBB210D25164E7C00D107FF /* DependencyInjectionManager.swift in Sources */,
+				5B9B9D07251A9AE40018C7EB /* LocalDataSourceProtocol.swift in Sources */,
 				5B6D36362514A53B00D8EFF0 /* RemoteDataSource.swift in Sources */,
 				5BBB1FD62514D2D900D107FF /* Comic.swift in Sources */,
 				5BBB209C2515102700D107FF /* CharactersPresenter.swift in Sources */,
@@ -1329,6 +1344,7 @@
 				5BBB207525150D8300D107FF /* AsynchronousOperation.swift in Sources */,
 				5B66E5722518E53000F3ABC8 /* CharactersRouterProtocol.swift in Sources */,
 				5BBB208E25150F1700D107FF /* BasePresenter.swift in Sources */,
+				5B9B9D0E251A9DE20018C7EB /* LocalDataSource.swift in Sources */,
 				5BFB001825126BBF00D0098B /* EventSummary.swift in Sources */,
 				5B9B9CF4251A94120018C7EB /* CharactersViewController.swift in Sources */,
 				5BD21B3F25177EC200BCCC07 /* UIColorExtension.swift in Sources */,

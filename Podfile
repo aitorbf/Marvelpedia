@@ -6,9 +6,10 @@ target 'Marvelpedia' do
   use_frameworks!
 
   # Pods for Marvelpedia
+  pod 'Swinject'
   pod 'Alamofire'
   pod 'AlamofireImage'
-  pod 'Swinject'
+  pod 'Cache'
 
   target 'MarvelpediaTests' do
     inherit! :search_paths
