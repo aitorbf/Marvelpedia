@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum APIErrorCode: String {
+enum APIErrorCode: Int {
     
-    case missingApiKeyOrHashOrTimestamp     = "409"
-    case invalidRefererOrHash               = "401"
-    case methodNotAllowed                   = "405"
-    case forbidden                          = "403"
+    case parametersError        = 409
+    case invalidRefererOrHash   = 401
+    case methodNotAllowed       = 405
+    case forbidden              = 403
 }

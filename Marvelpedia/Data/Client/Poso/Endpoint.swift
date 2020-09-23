@@ -53,15 +53,12 @@ enum Endpoint {
         switch self {
         case .characters(let offset, let name, let host, _):
             var parameters = getParameters(host, offset)
-            parameters.updateValue(Constants.API.ResultLimit.marvel.characters, forKey: "limit")
             if name != "" {
                 parameters.updateValue(name, forKey: "nameStartsWith")
             }
             return parameters
         case .characterComics(_, let offset, let host, _):
-            var parameters = getParameters(host, offset)
-            parameters.updateValue(Constants.API.ResultLimit.marvel.comics, forKey: "limit")
-            return parameters
+            return getParameters(host, offset)
         }
     }
     
@@ -89,6 +86,7 @@ enum Endpoint {
                 "ts"        : timestamp,
                 "apikey"    : publicMarvelAPIKey,
                 "hash"      : hash,
+                "limit"     : Constants.API.ResultLimit.marvel,
                 "offset"    : offset
             ] as [String : Any]
             return parameters
