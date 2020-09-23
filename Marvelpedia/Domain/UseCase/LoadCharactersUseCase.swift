@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class LoadCharactersUseCase: BaseUseCase {
+final class LoadCharactersUseCase {
     
     // MARK: - Public variables
     
