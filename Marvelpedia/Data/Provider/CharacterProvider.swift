@@ -13,6 +13,7 @@ final class CharacterProvider {
     // MARK: - Public variables
     
     var remoteDataSource: RemoteDataSourceProtocol?
+    var localDataSource: LocalDataSourceProtocol?
 }
 
 // MARK: - CharacterProviderProtocol protocol conformance
@@ -25,6 +26,7 @@ extension CharacterProvider: CharacterProviderProtocol {
             if error != nil {
                 completion(nil, error)
             } else if let result = response {
+                self.localDataSource?.saveCharacters(characters: result, offset: offset, name: name)
                 let characterCollection = CharacterCollectionMapper().transform(result)
                 completion(characterCollection, nil)
             } else {

@@ -138,7 +138,9 @@ extension CharactersViewController: CharactersViewControllerProtocol {
     }
     
     func showError() {
-        // Display error alert
+        let alert = UIAlertController(title: Constants.Error.title, message: Constants.Error.message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Constants.Error.buttonAccept, style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
 }
 

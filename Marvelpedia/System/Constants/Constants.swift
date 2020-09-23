@@ -16,10 +16,13 @@ enum Constants {
         }
         
         enum ResultLimit {
-            enum marvel {
-                static let characters = 100
-                static let comics = 20
-            }
+            static let marvel = 100
         }
+    }
+    
+    enum Error {
+        static let title = "Error"
+        static let message = "There was an internal error, please try again later"
+        static let buttonAccept = "Accept"
     }
 }

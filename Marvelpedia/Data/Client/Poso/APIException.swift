@@ -11,7 +11,7 @@ import Foundation
 enum APIException: Error {
     
     case connectivityException
-    case missingApiKeyOrHashOrTimestampException
+    case parametersErrorException
     case invalidRefererOrHashException
     case methodNotAllowedException
     case forbiddenException

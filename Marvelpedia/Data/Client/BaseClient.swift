@@ -37,17 +37,16 @@ class BaseClient {
                     completion(nil, APIException.unknownException)
                 }
                 
-                if let data = response.error {
-//                    do {
-//                        if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-//                            if let code = dictionary["errorCode"] as? String {
-//                                completion(nil, self.checkErrorCode(code))
-//                            }
-//                        }
-//                    } catch let exception {
-//                        completion(nil, exception as? APIException)
-//                    }
-                    print(data)
+                if let data = response.data {
+                    do {
+                        if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            if let code = dictionary["code"] as? Int {
+                                completion(nil, self.checkErrorCode(code))
+                            }
+                        }
+                    } catch let exception {
+                        completion(nil, exception as? APIException)
+                    }
                 }
                 completion(nil, APIException.connectivityException)
             }
@@ -56,11 +55,11 @@ class BaseClient {
     
     // MARK: - Private methods
     
-    private func checkErrorCode(_ errorCode: String) -> APIException {
+    private func checkErrorCode(_ errorCode: Int) -> APIException {
            if let validErrorCode = APIErrorCode(rawValue: errorCode) {
                switch validErrorCode {
-               case .missingApiKeyOrHashOrTimestamp:
-                   return .missingApiKeyOrHashOrTimestampException
+               case .parametersError:
+                   return .parametersErrorException
                case .invalidRefererOrHash:
                    return .invalidRefererOrHashException
                case .methodNotAllowed:
