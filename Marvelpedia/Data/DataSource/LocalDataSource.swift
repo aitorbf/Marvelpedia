@@ -61,13 +61,17 @@ final class LocalDataSource {
 
 extension LocalDataSource: LocalDataSourceProtocol {
     
-    func loadCharacters(offset: Int, name: String) -> CharacterDataWrapper? {
+    func loadCharacters(offset: Int, name: String) throws -> CharacterDataWrapper? {
         var characterName = name
         if characterName == "" {
             characterName = "all"
         }
         let objectKey = "\(Key.characters)_\(characterName)_\(offset)"
-        return try? charactersStorage?.object(forKey: objectKey)
+        do {
+            return try charactersStorage?.object(forKey: objectKey)
+        } catch {
+            throw APIException.cacheException
+        }
     }
     
     func saveCharacters(characters: CharacterDataWrapper, offset: Int, name: String) {
@@ -79,13 +83,25 @@ extension LocalDataSource: LocalDataSourceProtocol {
         try? charactersStorage?.setObject(characters, forKey: objectKey)
     }
     
-    func loadCharacterComics(characterId: Int, offset: Int) -> ComicDataWrapper? {
-        let objectKey = "\(Key.comics)_\(characterId)_\(offset)"
-        return try? comicsStorage?.object(forKey: objectKey)
+    func removeExpiredCharacterObjects() {
+        try? charactersStorage?.removeExpiredObjects()
     }
     
-    func saveCharacterComics(comics: ComicDataWrapper, characterId: Int, offset: Int) {
+    func loadCharacterComics(characterId: Int, offset: Int) throws -> ComicDataWrapper? {
+        let objectKey = "\(Key.comics)_\(characterId)_\(offset)"
+        do {
+            return try comicsStorage?.object(forKey: objectKey)
+        } catch {
+            throw APIException.cacheException
+        }
+    }
+    
+    func saveCharacterComics(comics: ComicDataWrapper, characterId: Int, offset: Int)  {
         let objectKey = "\(Key.comics)_\(characterId)_\(offset)"
         try? comicsStorage?.setObject(comics, forKey: objectKey)
+    }
+    
+    func removeExpiredComicObjects() {
+        try? comicsStorage?.removeExpiredObjects()
     }
 }

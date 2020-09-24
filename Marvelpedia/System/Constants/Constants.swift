@@ -16,7 +16,10 @@ enum Constants {
         }
         
         enum ResultLimit {
-            static let marvel = 100
+            enum marvel {
+                static let characters = 100
+                static let comics = 30
+            }
         }
     }
     

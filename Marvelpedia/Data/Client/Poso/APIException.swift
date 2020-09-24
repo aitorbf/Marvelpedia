@@ -14,5 +14,6 @@ enum APIException: Error {
     case invalidRefererOrHashException
     case methodNotAllowedException
     case forbiddenException
+    case cacheException
     case unknownException
 }

@@ -47,8 +47,10 @@ class ComicProviderUnitTests: QuickSpec {
         var saveCharactersIsCalled = false
         var loadCharacterComicsIsCalled = false
         var saveCharacterComicsIsCalled = false
+        var removeExpiredCharacterObjectsIsCalled = false
+        var removeExpiredComicObjectsIsCalled = false
         
-        func loadCharacters(offset: Int, name: String) -> CharacterDataWrapper? {
+        func loadCharacters(offset: Int, name: String) throws -> CharacterDataWrapper? {
             loadCharactersIsCalled = true
             if hasCachedData {
                 return CharacterDataWrapper()
@@ -61,7 +63,11 @@ class ComicProviderUnitTests: QuickSpec {
             saveCharactersIsCalled = true
         }
         
-        func loadCharacterComics(characterId: Int, offset: Int) -> ComicDataWrapper? {
+        func removeExpiredCharacterObjects() {
+            removeExpiredCharacterObjectsIsCalled = true
+        }
+        
+        func loadCharacterComics(characterId: Int, offset: Int) throws -> ComicDataWrapper? {
             loadCharacterComicsIsCalled = true
             if hasCachedData {
                 return ComicDataWrapper()
@@ -72,6 +78,10 @@ class ComicProviderUnitTests: QuickSpec {
         
         func saveCharacterComics(comics: ComicDataWrapper, characterId: Int, offset: Int) {
             saveCharacterComicsIsCalled = true
+        }
+        
+        func removeExpiredComicObjects() {
+            removeExpiredComicObjectsIsCalled = true
         }
     }
     
@@ -116,6 +126,9 @@ class ComicProviderUnitTests: QuickSpec {
                     comicProvider?.localDataSource = localDataSource
                     comicProvider?.loadCharacterComics(characterId: 123456789, offset: 0) { _,_ in }
                 }
+                it("should call removeExpiredComicObjects localDataSource method") {
+                    expect(localDataSource?.removeExpiredComicObjectsIsCalled).to(beTrue())
+                }
                 it("should call loadCharacterComics localDataSource method") {
                     expect(localDataSource?.loadCharacterComicsIsCalled).to(beTrue())
                 }
@@ -142,6 +155,9 @@ class ComicProviderUnitTests: QuickSpec {
                     comicProvider?.localDataSource = localDataSource
                     comicProvider?.loadCharacterComics(characterId: 123456789, offset: 0) { _,_ in }
                 }
+                it("should call removeExpiredComicObjects localDataSource method") {
+                    expect(localDataSource?.removeExpiredComicObjectsIsCalled).to(beTrue())
+                }
                 it("should call loadCharacterComics localDataSource method") {
                     expect(localDataSource?.loadCharacterComicsIsCalled).to(beTrue())
                 }
@@ -167,6 +183,9 @@ class ComicProviderUnitTests: QuickSpec {
                     comicProvider?.remoteDataSource = remoteDataSource
                     comicProvider?.localDataSource = localDataSource
                     comicProvider?.loadCharacterComics(characterId: 123456789, offset: 0) { _,_ in }
+                }
+                it("should call removeExpiredComicObjects localDataSource method") {
+                    expect(localDataSource?.removeExpiredComicObjectsIsCalled).to(beTrue())
                 }
                 it("should call loadCharacterComics localDataSource method") {
                     expect(localDataSource?.loadCharacterComicsIsCalled).to(beTrue())

@@ -10,11 +10,15 @@ import Foundation
 
 protocol LocalDataSourceProtocol {
     
-    func loadCharacters(offset: Int, name: String) -> CharacterDataWrapper?
+    func loadCharacters(offset: Int, name: String) throws -> CharacterDataWrapper?
     
     func saveCharacters(characters: CharacterDataWrapper, offset: Int, name: String)
     
-    func loadCharacterComics(characterId: Int, offset: Int) -> ComicDataWrapper?
+    func removeExpiredCharacterObjects()
+    
+    func loadCharacterComics(characterId: Int, offset: Int) throws -> ComicDataWrapper?
     
     func saveCharacterComics(comics: ComicDataWrapper, characterId: Int, offset: Int)
+    
+    func removeExpiredComicObjects()
 }
