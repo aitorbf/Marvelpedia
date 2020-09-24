@@ -37,13 +37,13 @@ class LocalDataSourceUnitTests: QuickSpec {
         describe("when loadCharacters is called") {
             context("given a valid protocol conformance, an offset and an empty name") {
                 beforeEach {
-                    _ = dataSource?.loadCharacters(offset: 0, name: "")
+                    _ = try? dataSource?.loadCharacters(offset: 0, name: "")
                 }
                 it("should gives a CharacterDataWrapper object or nil") {}
             }
             context("given a valid protocol conformance, an offset and a name") {
                 beforeEach {
-                    _ = dataSource?.loadCharacters(offset: 0, name: "iron")
+                    _ = try? dataSource?.loadCharacters(offset: 0, name: "iron")
                 }
                 it("should gives a CharacterDataWrapper object or nil") {}
             }
@@ -65,7 +65,7 @@ class LocalDataSourceUnitTests: QuickSpec {
         describe("when loadCharacterComics is called") {
             context("given a valid protocol conformance, a character id and an offset") {
                 beforeEach {
-                    _ = dataSource?.loadCharacterComics(characterId: 123456789, offset: 0)
+                    _ = try? dataSource?.loadCharacterComics(characterId: 123456789, offset: 0)
                 }
                 it("should gives a ComicDataWrapper object or nil") {}
             }

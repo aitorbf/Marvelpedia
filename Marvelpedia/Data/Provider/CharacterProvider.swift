@@ -21,10 +21,26 @@ final class CharacterProvider {
 extension CharacterProvider: CharacterProviderProtocol {
     
     func loadCharacters(offset: Int, name: String, _ completion: @escaping (CharacterCollection?, APIException?) -> Void) {
-        if let characters = localDataSource?.loadCharacters(offset: offset, name: name) {
-            let characterCollection = CharacterCollectionMapper().transform(characters)
-            completion(characterCollection, nil)
-        } else {
+        do {
+            localDataSource?.removeExpiredCharacterObjects()
+            if let characters = try localDataSource?.loadCharacters(offset: offset, name: name) {
+                let characterCollection = CharacterCollectionMapper().transform(characters)
+                completion(characterCollection, nil)
+            } else {
+                remoteDataSource?.loadCharacters(offset: offset, name: name) {
+                    (response, error) in
+                    if error != nil {
+                        completion(nil, error)
+                    } else if let result = response {
+                        self.localDataSource?.saveCharacters(characters: result, offset: offset, name: name)
+                        let characterCollection = CharacterCollectionMapper().transform(result)
+                        completion(characterCollection, nil)
+                    } else {
+                        completion(nil, APIException.unknownException)
+                    }
+                }
+            }
+        } catch {
             remoteDataSource?.loadCharacters(offset: offset, name: name) {
                 (response, error) in
                 if error != nil {
