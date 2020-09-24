@@ -1,0 +1,32 @@
+//
+//  LoadCharactersUseCase.swift
+//  Marvelpedia
+//
+//  Created by Aitor on 18/09/2020.
+//  Copyright © 2020 Aitor. All rights reserved.
+//
+
+import Foundation
+
+final class LoadCharactersUseCase {
+    
+    // MARK: - Public variables
+    
+    var characterProvider: CharacterProviderProtocol?
+}
+
+extension LoadCharactersUseCase: LoadCharactersUseCaseProtocol {
+    
+    func execute(offset: Int, name: String, _ completion: @escaping (CharacterCollection?, APIException?) -> Void) {
+        characterProvider?.loadCharacters(offset: offset, name: name) {
+            (response, error) in
+            if error != nil {
+                completion(nil, error)
+            } else if let characterCollection = response {
+                completion(characterCollection, nil)
+            } else {
+                completion(nil, APIException.unknownException)
+            }
+        }
+    }
+}

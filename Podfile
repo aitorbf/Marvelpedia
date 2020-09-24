@@ -1,19 +1,27 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.0'
+use_frameworks!
+
+def marvelpedia_pods
+  pod 'Swinject'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'Cache'
+end
+
+def unitTestsMarvelpedia_pods
+  pod 'Quick'
+  pod 'Nimble'
+end
 
 target 'Marvelpedia' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  marvelpedia_pods
+end
 
-  # Pods for Marvelpedia
+target 'MarvelpediaTests' do
+  marvelpedia_pods
+  unitTestsMarvelpedia_pods
+end
 
-  target 'MarvelpediaTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'MarvelpediaUITests' do
-    # Pods for testing
-  end
-
+target 'MarvelpediaUITests' do
+  marvelpedia_pods
 end

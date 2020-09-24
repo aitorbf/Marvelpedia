@@ -6,6 +6,6 @@ App created for Mavel fans, where you can find all the heroes of the Marvel univ
 
 - Run `pod install` to install project dependencies.
 
-- Copy your Marvel API key in `MarvelAPIKey` field inside info.plist (You need it to use Marvel API).
+- Copy your public Marvel API key in `PublicMarvelAPIKey` field and your private Marvel API key in `PrivateMarvelAPIKey`field inside info.plist (You need them to use Marvel API).
 
 - You can launch the app now!
