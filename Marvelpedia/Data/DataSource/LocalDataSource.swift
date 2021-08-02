@@ -25,7 +25,7 @@ final class LocalDataSource {
     
     // MARK: Private constants
     
-    private let charactersStorage = try? Storage(
+    private let charactersStorage = try? Storage<String, CharacterDataWrapper>(
         diskConfig: DiskConfig(
             name: StorageName.characters,
             expiry: .seconds(TimeInterval(3600)),
@@ -40,7 +40,7 @@ final class LocalDataSource {
         ),
         transformer: TransformerFactory.forCodable(ofType: CharacterDataWrapper.self)
     )
-    private let comicsStorage = try? Storage(
+    private let comicsStorage = try? Storage<String, ComicDataWrapper>(
         diskConfig: DiskConfig(
             name: StorageName.comics,
             expiry: .seconds(TimeInterval(3600)),

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BaseViewControllerProtocol: class {
+protocol BaseViewControllerProtocol: AnyObject {
     
     func setupView()
 }
